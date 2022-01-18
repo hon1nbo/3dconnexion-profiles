@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+(c) Copyright 3Dconnexion. All rights reserved.
+$Revision: 17388 $
+-->
+<AppCfg  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Default="true" CfgFormatVersion="1.3" ThisFileVersion="1.9" xml:space="preserve">
+  <CfgProperties>
+    <ID>ID_STR_OverwatchSpectate</ID>
+    <Name>STR_OVERWATCHSPECTATE</Name>
+    <InheritsFromID>ID_Base_Cfg</InheritsFromID>
+  </CfgProperties>
+  <AppInfo>
+    <Signature>
+      <Name>STR_OVERWATCHSPECTATE</Name>
+      <ExecutableName>OVERWATCH.EXE</ExecutableName>
+      <Transport>KMJ</Transport>
+    </Signature>
+    <Options>
+      <IgnoreMouseWheelInertia>true</IgnoreMouseWheelInertia>
+    </Options>
+  </AppInfo>
+  <AuthorInfo>
+    <DriverVersion>17.6.1</DriverVersion>
+    <Created>
+      <Tool>Echo, Awk, and self-loathing</Tool>
+      <Date>1/17/2022 10:50:51 PM UTC</Date>
+      <User>@hon1nbo</User>
+    </Created>
+  </AuthorInfo>
+  <Settings>
+    <ResponseCurve>1.1</ResponseCurve>
+    <ScaleX>1.00</ScaleX> <!-- Camera Strafe Left/Right -->
+    <ScaleY>2.00</ScaleY> <!-- Camera Forward/Reverse -->
+    <ScaleZ>2.00</ScaleZ> <!-- Camera Elevation -->
+    <ScaleRx>2.00</ScaleRx> <!-- camera tilt up/down -->
+    <ScaleRy>1.00</ScaleRy>
+    <ScaleRz>2.00</ScaleRz> <!-- camera pan left/right -->
+  </Settings>
+
+ <!-- Let's define the basic Overwatch Spectate commands -->
+
+ <MacroTable>
+     <MacroEntry>
+      <ID>PauseSpectate</ID>
+      <Sequence>
+ <!-- ctrl+p -->
+        <KeyPress>E0</KeyPress>
+        <KeyPress>13</KeyPress>
+        <KeyRelease>13</KeyRelease>
+        <KeyRelease>E0</KeyRelease>
+      </Sequence>
+    </MacroEntry>
+
+<!-- OW spectate does not have default for forward / reverse playback
+Using NumPad1 and NumPad2 respectively -->
+    <MacroEntry>
+      <ID>ReplaySkipForward</ID>
+      <Sequence>
+        <KeyPress>59</KeyPress>
+        <KeyRelease>59</KeyRelease>
+      </Sequence>
+    </MacroEntry>
+    <MacroEntry>
+      <ID>ReplaySkipReverse</ID>
+      <Sequence>
+        <KeyPress>5a</KeyPress>
+        <KeyRelease>5a</KeyRelease>
+      </Sequence>
+    </MacroEntry>
+
+<MacroEntry>
+      <ID>SpectateObjective</ID>
+      <Sequence>
+        <KeyPress>27</KeyPress>
+        <KeyRelease>27</KeyRelease>
+      </Sequence>
+    </MacroEntry>
+<MacroEntry>
+      <ID>SpectateLock</ID>
+      <ActionID>HIDMouse_Left</ActionID>
+    </MacroEntry>
+
+<!-- toggle 1st/3rd perspective for locked player -->
+<MacroEntry>
+      <ID>ToggleCameraPerspective</ID>
+      <Sequence>
+        <KeyPress>2C</KeyPress>
+        <KeyRelease>2C</KeyRelease>
+      </Sequence>
+    </MacroEntry>
+<MacroEntry>
+      <ID>ToggleCamera3pAngle</ID>
+      <Sequence>
+        <KeyPress>06</KeyPress>
+        <KeyRelease>06</KeyRelease>
+      </Sequence>
+    </MacroEntry>
+
+<!-- Toggle the Spectate Overlay -->
+<MacroEntry>
+      <ID>ToggleOverlay</ID>
+      <Sequence>
+        <KeyPress>E0</KeyPress>
+        <KeyPress>0C</KeyPress>
+        <KeyRelease>0C</KeyRelease>
+        <KeyRelease>E0</KeyRelease>
+      </Sequence>
+    </MacroEntry>
+<!-- OW spectate does not have default for next player / previous player
+Using NumPad9 and NumPad0 respectively -->
+
+<MacroEntry>
+      <ID>SpectateNextPlayer</ID>
+      <Sequence>
+        <KeyPress>61</KeyPress>
+        <KeyRelease>61</KeyRelease>
+      </Sequence>
+    </MacroEntry>
+<MacroEntry>
+      <ID>SpectatePreviousPlayer</ID>
+      <Sequence>
+        <KeyPress>62</KeyPress>
+        <KeyRelease>62</KeyRelease>
+      </Sequence>
+    </MacroEntry>
+
+<!-- Documentation non-existant; do macros work on puck manipulation>? \\
+Would be easier for upkeep and making customisations -->
+    <MacroEntry>
+      <ID>IncreaseCameraElevation</ID>
+ <ActionID>KB_Keystroke</ActionID>
+ <RepeatStyle>PressAndHold</RepeatStyle>
+ <KeyStroke>
+<Key>08</Key>
+ </KeyStroke>
+    </MacroEntry>
+    <MacroEntry>
+      <ID>DecreaseCameraElevation</ID>
+ <ActionID>KB_Keystroke</ActionID>
+ <RepeatStyle>PressAndHold</RepeatStyle>
+      <KeyStroke>
+        <Key>14</Key>
+      </KeyStroke>
+    </MacroEntry>
+    <MacroEntry>
+      <ID>CameraForward</ID>
+ <ActionID>KB_Keystroke</ActionID>
+ <RepeatStyle>PressAndHold</RepeatStyle>
+      <KeyStroke>
+        <Key>1A</Key>
+      </KeyStroke>
+    </MacroEntry>
+   <MacroEntry>
+      <ID>CameraReverse</ID>
+ <ActionID>KB_Keystroke</ActionID>
+ <RepeatStyle>PressAndHold</RepeatStyle>
+      <KeyStroke>
+        <Key>16</Key>
+      </KeyStroke>
+    </MacroEntry>
+   <MacroEntry>
+      <ID>CameraStrafeLeft</ID>
+ <ActionID>KB_Keystroke</ActionID>
+ <RepeatStyle>PressAndHold</RepeatStyle>
+      <KeyStroke>
+        <Key>04</Key>
+      </KeyStroke>
+    </MacroEntry>
+   <MacroEntry>
+      <ID>CameraStrafeRight</ID>
+ <ActionID>KB_Keystroke</ActionID>
+ <RepeatStyle>PressAndHold</RepeatStyle>
+      <KeyStroke>
+        <Key>07</Key>
+      </KeyStroke>
+    </MacroEntry>
+  </MacroTable>
+ 
+  <ButtonActions>
+<!-- Overwatch Spectate Specific -->
+
+<ButtonAction Type="Macro" xsi:type="ButtonAction_Macro">
+      <ID>PauseSpectate</ID>
+      <Name>Pause Spectate</Name>
+</ButtonAction>
+<ButtonAction Type="Macro" xsi:type="ButtonAction_Macro">
+      <ID>SpectateObjective</ID>
+      <Name>Camera to the Objective Facing Combat</Name>
+</ButtonAction>
+<ButtonAction Type="Macro" xsi:type="ButtonAction_Macro">
+      <ID>SpectateLock</ID>
+      <Name>Lock Camera on-off Target</Name>
+</ButtonAction>
+    <ButtonAction Type="Macro" xsi:type="ButtonAction_Macro">
+      <ID>ToggleCameraPerspective</ID>
+      <Name>Change 1st or 3rd persion perspective</Name>
+</ButtonAction>
+    <ButtonAction Type="Macro" xsi:type="ButtonAction_Macro">
+      <ID>ToggleCamera3pAngle</ID>
+      <Name>Change 3rd persion camera angle</Name>
+</ButtonAction>
+<ButtonAction Type="Macro" xsi:type="ButtonAction_Macro">
+      <ID>SpectateNextPlayer</ID>
+      <Name>Camera to Next Player</Name>
+</ButtonAction>
+<ButtonAction Type="Macro" xsi:type="ButtonAction_Macro">
+      <ID>SpectatePreviousPlayer</ID>
+      <Name>Camera to Previous Player</Name>
+</ButtonAction>
+<ButtonAction Type="Macro" xsi:type="ButtonAction_Macro">
+      <ID>ToggleOverlay</ID>
+      <Name>Toggle the Spectate Overlay</Name>
+</ButtonAction>
+<ButtonAction Type="Macro" xsi:type="ButtonAction_Macro">
+      <ID>ReplaySkipForward</ID>
+      <Name>Jump Forward in Replay Timeline</Name>
+</ButtonAction>
+<ButtonAction Type="Macro" xsi:type="ButtonAction_Macro">
+      <ID>ReplaySkipReverse</ID>
+      <Name>Jump Backwards in Replay Timeline</Name>
+</ButtonAction>
+  </ButtonActions>
+ 
+  <Devices>
+    <Device>
+      <ID>ID_Standard_3D_Mouse</ID>
+      <Name>Standard 3D Mouse</Name>
+      <AxisFilter>None</AxisFilter>
+      <CurrentAxisBank>Default</CurrentAxisBank>
+      <CurrentButtonBank>Default</CurrentButtonBank>
+      <AxisBank Default="true">
+        <ID>Default</ID>
+        <Name>STR_DEFAULT_BANK</Name>
+        <Axis>
+          <Enabled>true</Enabled>
+          <Input>
+            <ActionID>HIDMultiAxis_Rz</ActionID>
+            <Min>-512</Min>
+            <Max>511</Max>
+          </Input>
+          <Output>
+            <ActionID>HIDMouse_X</ActionID>
+            <Min>-512.00</Min>
+            <Max>511.00</Max>
+            <Scale>3.00</Scale>
+            <Reversed>false</Reversed>
+          </Output>
+        </Axis>
+        <Axis>
+          <Enabled>true</Enabled>
+          <Input>
+            <ActionID>HIDMultiAxis_Rx</ActionID>
+            <Min>-512</Min>
+            <Max>511</Max>
+<Deadband>100</Deadband> <!-- compensate for typical hand/puck jitter/CoG-->
+          </Input>
+          <Output>
+            <ActionID>HIDMouse_Y</ActionID>
+            <Min>-512.00</Min>
+            <Max>511.00</Max>
+            <Scale>2.00</Scale>
+            <Reversed>true</Reversed>
+          </Output>
+        </Axis>
+<Axis>
+          <Enabled>true</Enabled>
+          <Input>
+            <ActionID>HIDMultiAxis_Z</ActionID>
+            <Min>-512</Min>
+            <Max>0</Max>
+<Deadband>200</Deadband>  <!-- Higher since we have to factor weight and associated gravity reset of the puck -->
+          </Input>
+          <Output>
+<ActionID>KB_Keystroke</ActionID>
+<RepeatStyle>PressAndHold</RepeatStyle>
+<KeyStroke>
+<Key>08</Key>
+</KeyStroke>
+          </Output>
+        </Axis>
+        <Axis>
+          <Enabled>true</Enabled>
+          <Input>
+            <ActionID>HIDMultiAxis_Z</ActionID>
+            <Min>0</Min>
+            <Max>511</Max>
+<Deadband>200</Deadband> <!-- Higher since we have to factor weight and associated gravity reset of the puck -->
+          </Input>
+          <Output>
+            <ActionID>KB_Keystroke</ActionID>
+<RepeatStyle>PressAndHold</RepeatStyle>
+<KeyStroke>
+<Key>14</Key>
+</KeyStroke>
+          </Output>
+        </Axis>
+        <Axis>
+          <Enabled>true</Enabled>
+          <Input>
+            <ActionID>HIDMultiAxis_X</ActionID>
+            <Min>-512</Min>
+            <Max>0</Max>
+<Deadband>125</Deadband> <!-- compensate for typical hand/puck jitter/CoG when rotating wrist-->
+          </Input>
+          <Output>
+            <!-- <ActionID>CameraStrafeLeft</ActionID> -->
+<ActionID>KB_Keystroke</ActionID>
+<RepeatStyle>PressAndHold</RepeatStyle>
+<KeyStroke>
+<Key>04</Key>
+</KeyStroke>
+          </Output>
+        </Axis>
+<Axis>
+          <Enabled>true</Enabled>
+          <Input>
+            <ActionID>HIDMultiAxis_X</ActionID>
+            <Min>0</Min>
+            <Max>511</Max>
+<Deadband>125</Deadband> <!-- compensate for typical hand/puck jitter/CoG when rotating wrist-->
+          </Input>
+          <Output>
+            <!-- <ActionID>CameraStrafeRight</ActionID> -->
+<ActionID>KB_Keystroke</ActionID>
+<RepeatStyle>PressAndHold</RepeatStyle>
+<KeyStroke>
+<Key>07</Key>
+</KeyStroke>
+          </Output>
+        </Axis>
+        <Axis>
+          <Enabled>true</Enabled>
+          <Input>
+            <ActionID>HIDMultiAxis_Y</ActionID>
+            <Min>-512</Min>
+            <Max>0</Max>
+<Deadband>100</Deadband> <!-- compensate for typical hand/puck jitter/CoG-->
+          </Input>
+          <Output>
+            <!-- <ActionID>CameraForward</ActionID> -->
+<ActionID>KB_Keystroke</ActionID>
+<RepeatStyle>PressAndHold</RepeatStyle>
+<KeyStroke>
+<Key>1A</Key>
+</KeyStroke>
+          </Output>
+        </Axis>
+       <Axis>
+          <Enabled>true</Enabled>
+          <Input>
+            <ActionID>HIDMultiAxis_Y</ActionID>
+            <Min>0</Min>
+            <Max>511</Max>
+<Deadband>100</Deadband> <!-- compensate for typical hand/puck jitter/CoG-->
+          </Input>
+          <Output>
+            <!-- <ActionID>CameraReverse</ActionID> -->
+<ActionID>KB_Keystroke</ActionID>
+<RepeatStyle>PressAndHold</RepeatStyle>
+<KeyStroke>
+<Key>16</Key>
+</KeyStroke>
+          </Output>
+        </Axis>
+        <Axis>
+          <Enabled>true</Enabled>
+          <Input>
+            <ActionID>HIDMultiAxis_Ry</ActionID>
+            <Min>-512</Min>
+            <Max>511</Max>
+          </Input>
+          <Output>
+            <ActionID>HIDJoystick_Rz</ActionID>
+          </Output>
+        </Axis>
+      </AxisBank>
+      <ButtonBank Default="true">
+        <ID>Default</ID>
+        <Name>STR_DEFAULT_BUTTONBANK</Name>
+        <Button>
+          <Input>
+            <ActionID>V3DK_MENU</ActionID>
+          </Input>
+          <Output>
+            <ActionID>Driver_ShowDriverGUI</ActionID>
+          </Output>
+        </Button>
+        <Button>
+          <Input>
+            <ActionID>V3DK_FIT</ActionID>
+          </Input>
+          <Output>
+            <ActionID>Driver_ShowDriverGUI</ActionID>
+          </Output>
+        </Button>
+        <Button>
+          <Input>
+            <ActionID>V3DK_TOP</ActionID>
+          </Input>
+          <Output>
+            <ActionID>ReplaySkipForward</ActionID>
+          </Output>
+        </Button>
+        <Button>
+          <Input>
+            <ActionID>V3DK_LEFT</ActionID>
+          </Input>
+          <Output>
+           
+          </Output>
+        </Button>
+        <Button>
+          <Input>
+            <ActionID>V3DK_RIGHT</ActionID>
+          </Input>
+          <Output>
+            <ActionID>HIDJoystick_Hat_E</ActionID>
+          </Output>
+        </Button>
+        <Button>
+          <Input>
+            <ActionID>V3DK_FRONT</ActionID>
+          </Input>
+          <Output>
+            <ActionID>HIDJoystick_Hat_S</ActionID>
+          </Output>
+        </Button>
+        <Button>
+          <Input>
+            <ActionID>V3DK_1</ActionID>
+          </Input>
+          <Output>
+            <ActionID>ToggleOverlay</ActionID>
+          </Output>
+        </Button>
+        <Button>
+          <Input>
+            <ActionID>V3DK_2</ActionID>
+          </Input>
+          <Output>
+            <ActionID>SpectateObjective</ActionID>
+          </Output>
+        </Button>
+        <Button>
+          <Input>
+            <ActionID>V3DK_3</ActionID>
+          </Input>
+          <Output>
+            <ActionID>SpectatePreviousPlayer</ActionID>
+          </Output>
+        </Button>
+        <Button>
+          <Input>
+            <ActionID>V3DK_4</ActionID>
+          </Input>
+          <Output>
+            <ActionID>SpectateNextPlayer</ActionID>
+          </Output>
+        </Button>
+        <Button>
+          <Input>
+            <ActionID>V3DK_ESC</ActionID>
+          </Input>
+          <Output>
+            <ActionID>ToggleCamera3pAngle</ActionID>
+          </Output>
+        </Button>
+        <Button>
+          <Input>
+            <ActionID>V3DK_ALT</ActionID>
+          </Input>
+ <Output>
+<ActionID>PauseSpectate</ActionID>
+          </Output>
+        </Button>
+        <Button>
+          <Input>
+            <ActionID>V3DK_SHIFT</ActionID> <!-- TODO: debug why macro doesn't work for this one SpectateLock-->
+          </Input>
+          <Output>
+            <ActionID>HIDMouse_Left</ActionID>
+          </Output>
+        </Button>
+        <Button>
+          <Input>
+            <ActionID>V3DK_CTRL</ActionID>
+          </Input>
+          <Output>
+            <ActionID>ToggleCameraPerspective</ActionID>
+          </Output>
+        </Button>
+        <Button>
+          <Input>
+            <ActionID>V3DK_ROTATE</ActionID>
+          </Input>
+          <Output>
+            <ActionID>Driver_ToggleTranslations</ActionID>
+          </Output>
+        </Button>
+        <Button>
+          <Input>
+            <ActionID>V3DK_DOMINANT</ActionID>
+          </Input>
+          <Output>
+            <ActionID>Driver_ToggleDominantFilter</ActionID>
+          </Output>
+        </Button>
+        <Button>
+          <Input>
+            <ActionID>V3DK_PLUS</ActionID>
+          </Input>
+          <Output>
+            <ActionID>Driver_IncreaseAppScale</ActionID>
+          </Output>
+        </Button>
+        <Button>
+          <Input>
+            <ActionID>V3DK_MINUS</ActionID>
+          </Input>
+          <Output>
+            <ActionID>Driver_DecreaseAppScale</ActionID>
+          </Output>
+        </Button>
+        <Button>
+          <Input>
+            <ActionID>V3DK_USER</ActionID>
+          </Input>
+          <Output>
+            <ActionID>Driver_ToggleRotations</ActionID>
+          </Output>
+        </Button>
+<Button>
+          <Input>
+            <ActionID>V3DK_ROLL_CW</ActionID>
+          </Input>
+          <Output>
+            <ActionID>ReplaySkipReverse</ActionID>
+          </Output>
+        </Button>
+      </ButtonBank>
+    </Device>
+    <Device>
+      <ID>ID_ProductID_C62E</ID>
+      <Name>SpaceMouse Wireless</Name>
+      <CurrentAxisBank>Default</CurrentAxisBank>
+      <CurrentButtonBank>Default</CurrentButtonBank>
+      <ButtonBank Default="true">
+        <ID>Default</ID>
+        <Name>STR_DEFAULT_BUTTONBANK</Name>
+        <Button>
+          <Input>
+            <ActionID>HIDButton_1</ActionID>
+          </Input>
+          <Output>
+            <ActionID>HIDJoystick_1</ActionID>
+          </Output>
+        </Button>
+        <Button>
+          <Input>
+            <ActionID>HIDButton_2</ActionID>
+          </Input>
+          <Output>
+            <ActionID>HIDJoystick_2</ActionID>
+          </Output>
+        </Button>
+      </ButtonBank>
+    </Device>
+  </Devices>
+</AppCfg>
